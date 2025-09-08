@@ -267,6 +267,16 @@
             const submitBtn = document.querySelector('.submit-btn');
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
+             // Aguardar envio e mostrar mensagem de sucesso
+        setTimeout(() => {
+            document.querySelector('.container').innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <h2>Obrigado!</h2>
+                    <p>Sua análise será enviada por email em alguns minutos.</p>
+                    <p>Nossa equipe entrará em contato em breve.</p>
+                </div>
+            `;
+        }, 2000);
         });
     </script>
 </body>
