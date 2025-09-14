@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Leads - Clínica de Estética</title>
+    <title>Realize seu Sonho com Consórcio</title>
     <style>
         * {
             margin: 0;
@@ -15,124 +15,209 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 20px;
         }
 
         .container {
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
         .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 40px 30px;
             text-align: center;
-            margin-bottom: 30px;
         }
 
-        .logo {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            margin: 0 auto 20px;
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .benefits {
+            background: #f8f9fa;
+            padding: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .benefits h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .benefit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: bold;
-            font-size: 24px;
+            font-size: 1.2em;
+            flex-shrink: 0;
         }
 
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 16px;
+        .form-container {
+            padding: 40px 30px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        label {
+        .form-group label {
             display: block;
             margin-bottom: 8px;
+            font-weight: 600;
             color: #333;
-            font-weight: 500;
+            font-size: 1.05em;
         }
 
-        input, select, textarea {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e1e5e9;
+            padding: 15px;
+            border: 2px solid #e9ecef;
             border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-            background-color: #f8f9fa;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
         }
 
-        input:focus, select:focus, textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            background-color: white;
+            border-color: #4CAF50;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
         }
 
-        .radio-group {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            margin: 30px 0;
+        }
+
+        .checkbox-item {
             display: flex;
-            gap: 15px;
-            margin-top: 8px;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
 
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .radio-option input[type="radio"] {
-            width: auto;
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
             margin: 0;
+            accent-color: #4CAF50;
+        }
+
+        .checkbox-item label {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+            margin: 0;
+            font-weight: 400;
         }
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
             color: white;
+            padding: 18px;
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
         }
 
-        .required {
-            color: #e74c3c;
+        .security-note {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 10px;
+            text-align: center;
+            color: #2e7d32;
+            font-size: 0.9em;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
+        .urgency {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .urgency h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
             }
             
-            .radio-group {
-                flex-direction: column;
-                gap: 10px;
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .container {
+                margin: 10px;
             }
         }
     </style>
@@ -140,143 +225,286 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">HF</div>
-            <h1>Análise Gratuita de Leads</h1>
-            <p class="subtitle">Descubra o potencial dos seus leads com IA</p>
+            <h1>💰 Realize seu Sonho</h1>
+            <p>Conquiste sua casa própria, carro novo ou reforma com as melhores condições do mercado!</p>
         </div>
 
-        <form action="https://n8n.srv943490.hstgr.cloud/webhook-test/b2cb69af-b69a-4c6c-8aeb-679a03210e59" method="POST">
-            <div class="form-group">
-                <label for="nome">Nome Completo <span class="required">*</span></label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="telefone">WhatsApp/Telefone <span class="required">*</span></label>
-                <input type="tel" id="telefone" name="telefone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="empresa">Nome da Clínica <span class="required">*</span></label>
-                <input type="text" id="empresa" name="empresa" required>
-            </div>
-
-            <div class="form-group">
-                <label for="procedimentos">Principais Procedimentos Oferecidos</label>
-                <select id="procedimentos" name="procedimentos" required>
-                    <option value="">Selecione...</option>
-                    <option value="harmonizacao-facial">Harmonização Facial</option>
-                    <option value="botox">Botox/Toxina Botulínica</option>
-                    <option value="preenchimento">Preenchimento com Ácido Hialurônico</option>
-                    <option value="limpeza-pele">Limpeza de Pele</option>
-                    <option value="laser">Tratamentos a Laser</option>
-                    <option value="peeling">Peeling</option>
-                    <option value="massagem">Massagens Estéticas</option>
-                    <option value="outros">Outros</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="leads-mes">Quantos leads vocês recebem por mês?</label>
-                <select id="leads-mes" name="leads_mes" required>
-                    <option value="">Selecione...</option>
-                    <option value="0-20">0 a 20 leads</option>
-                    <option value="21-50">21 a 50 leads</option>
-                    <option value="51-100">51 a 100 leads</option>
-                    <option value="101-200">101 a 200 leads</option>
-                    <option value="200+">Mais de 200 leads</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="conversao">Qual sua taxa de conversão atual? (aproximadamente)</label>
-                <select id="conversao" name="conversao" required>
-                    <option value="">Selecione...</option>
-                    <option value="nao-sei">Não sei</option>
-                    <option value="0-10">0% a 10%</option>
-                    <option value="11-20">11% a 20%</option>
-                    <option value="21-30">21% a 30%</option>
-                    <option value="31+">Mais de 30%</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Como vocês captam leads atualmente?</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="instagram" name="captacao" value="instagram">
-                        <label for="instagram">Instagram</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="google-ads" name="captacao" value="google-ads">
-                        <label for="google-ads">Google Ads</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="indicacao" name="captacao" value="indicacao">
-                        <label for="indicacao">Indicação</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="site" name="captacao" value="site">
-                        <label for="site">Site</label>
-                    </div>
+        <div class="benefits">
+            <h3>🎯 Por que escolher nosso consórcio?</h3>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💸</div>
+                    <span>Parcelas que cabem no seu bolso</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <span>Sem juros abusivos</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <span>Aprovação mais rápida</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <span>100% seguro e regulamentado</span>
                 </div>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="ticket-medio">Ticket médio por procedimento (R$)</label>
-                <select id="ticket-medio" name="ticket_medio" required>
-                    <option value="">Selecione...</option>
-                    <option value="0-500">R$ 0 a R$ 500</option>
-                    <option value="501-1000">R$ 501 a R$ 1.000</option>
-                    <option value="1001-2000">R$ 1.001 a R$ 2.000</option>
-                    <option value="2001-5000">R$ 2.001 a R$ 5.000</option>
-                    <option value="5000+">Mais de R$ 5.000</option>
-                </select>
+        <div class="form-container">
+            <div class="urgency">
+                <h4>⏰ OFERTA LIMITADA!</h4>
+                <p>Condições especiais válidas apenas para os próximos <strong>50 interessados</strong>. Não perca essa oportunidade!</p>
             </div>
 
-            <div class="form-group">
-                <label for="maior-desafio">Qual o maior desafio com leads atualmente?</label>
-                <textarea id="maior-desafio" name="maior_desafio" rows="3" placeholder="Ex: Muitos leads interessados apenas em preço, dificuldade para identificar quem realmente vai fechar..."></textarea>
-            </div>
+            <form id="consorcioForm">
+                <div class="form-group">
+                    <label for="nome">Nome completo *</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                </div>
 
-            <button type="submit" class="submit-btn">
-                Receber Análise Gratuita
-            </button>
-        </form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">WhatsApp *</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="idade">Idade</label>
+                        <select id="idade" name="idade">
+                            <option value="">Selecione sua idade</option>
+                            <option value="18-25">18 a 25 anos</option>
+                            <option value="26-35">26 a 35 anos</option>
+                            <option value="36-45">36 a 45 anos</option>
+                            <option value="46-55">46 a 55 anos</option>
+                            <option value="56+">Acima de 56 anos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="renda">Renda familiar mensal</label>
+                        <select id="renda" name="renda">
+                            <option value="">Selecione sua renda</option>
+                            <option value="ate-2sm">Até R$ 2.640</option>
+                            <option value="2-5sm">R$ 2.640 a R$ 6.600</option>
+                            <option value="5-10sm">R$ 6.600 a R$ 13.200</option>
+                            <option value="10-20sm">R$ 13.200 a R$ 26.400</option>
+                            <option value="20sm+">Acima de R$ 26.400</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="objetivo">Qual seu objetivo principal? *</label>
+                    <select id="objetivo" name="objetivo" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="casa-propria">🏠 Casa própria</option>
+                        <option value="apartamento">🏢 Apartamento</option>
+                        <option value="carro">🚗 Veículo</option>
+                        <option value="moto">🏍️ Motocicleta</option>
+                        <option value="reforma">🔨 Reforma/Construção</option>
+                        <option value="terreno">🌿 Terreno</option>
+                        <option value="outros">💼 Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor aproximado do bem desejado</label>
+                    <select id="valor" name="valor">
+                        <option value="">Selecione o valor</option>
+                        <option value="50-100k">R$ 50.000 a R$ 100.000</option>
+                        <option value="100-200k">R$ 100.000 a R$ 200.000</option>
+                        <option value="200-300k">R$ 200.000 a R$ 300.000</option>
+                        <option value="300-500k">R$ 300.000 a R$ 500.000</option>
+                        <option value="500k+">Acima de R$ 500.000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade onde mora</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo - SP">
+                </div>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="aceito-termos" name="aceito-termos" required>
+                        <label for="aceito-termos">Aceito receber informações sobre consórcios e produtos relacionados por e-mail, WhatsApp e telefone. *</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="aceito-lgpd" name="aceito-lgpd" required>
+                        <label for="aceito-lgpd">Concordo com o tratamento dos meus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD). *</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    🎯 Quero Receber Minha Proposta Grátis
+                </button>
+
+                <div class="security-note">
+                    🔒 <strong>Seus dados estão 100% seguros conosco.</strong><br>
+                    Não compartilhamos suas informações com terceiros.
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            // Validação básica
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const telefone = document.getElementById('telefone').value;
+        // ============================================
+        // CONFIGURAÇÃO DO WEBHOOK
+        // ============================================
+        
+        // 🔧 SUBSTITUA ESTA URL PELA SUA URL DE WEBHOOK
+        const WEBHOOK_URL = 'https://n8n.srv943490.hstgr.cloud/webhook-test/b2cb69af-b69a-4c6c-8aeb-679a03210e59';
+        
+        // Configurações opcionais
+        const CONFIG = {
+            // Redirecionamento após envio (opcional)
+            redirectUrl: '', // Ex: 'https://seusite.com/obrigado'
             
-            if (!nome || !email || !telefone) {
-                e.preventDefault();
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
+            // Integração com Google Analytics (opcional)
+            gaTrackingId: '', // Ex: 'G-XXXXXXXXXX'
+            
+            // Integração com Facebook Pixel (opcional)
+            fbPixelId: '', // Ex: '1234567890123456'
+            
+            // Mensagens personalizadas
+            mensagens: {
+                sucesso: '✅ Obrigado! Sua proposta será enviada em até 24 horas para seu WhatsApp e e-mail!',
+                erro: '❌ Ops! Ocorreu um erro. Tente novamente ou entre em contato conosco.',
+                carregando: '⏳ Enviando sua solicitação...'
             }
+        };
 
-            // Feedback visual
+        document.getElementById('consorcioForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
             const submitBtn = document.querySelector('.submit-btn');
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-             // Aguardar envio e mostrar mensagem de sucesso
-        setTimeout(() => {
-            document.querySelector('.container').innerHTML = `
-                <div style="text-align: center; padding: 40px;">
-                    <h2>Obrigado!</h2>
-                    <p>Sua análise será enviada por email em alguns minutos.</p>
-                    <p>Nossa equipe entrará em contato em breve.</p>
-                </div>
-            `;
-        }, 2000);
+            const originalText = submitBtn.textContent;
+            
+            try {
+                // Mostrar loading
+                submitBtn.textContent = CONFIG.mensagens.carregando;
+                submitBtn.disabled = true;
+                
+                // Coletar dados do formulário
+                const formData = new FormData(this);
+                const dados = Object.fromEntries(formData);
+                
+                // Adicionar dados extras (timestamp, URL, etc.)
+                const dadosCompletos = {
+                    ...dados,
+                    timestamp: new Date().toISOString(),
+                    source: window.location.href,
+                    userAgent: navigator.userAgent,
+                    lead_type: 'consorcio_form'
+                };
+                
+                console.log('📊 Dados do lead:', dadosCompletos);
+                
+                // ============================================
+                // ENVIO PARA WEBHOOK
+                // ============================================
+                
+                if (WEBHOOK_URL && WEBHOOK_URL !== 'https://seu-webhook-aqui.com/lead') {
+                    const response = await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(dadosCompletos)
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    
+                    const resultado = await response.json();
+                    console.log('✅ Lead enviado com sucesso:', resultado);
+                } else {
+                    console.warn('⚠️ WEBHOOK_URL não configurada. Configure a URL do webhook no início do script.');
+                }
+                
+                // ============================================
+                // TRACKING E CONVERSÕES
+                // ============================================
+                
+                // Google Analytics 4
+                if (CONFIG.gaTrackingId && typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': CONFIG.gaTrackingId,
+                        'event_category': 'Lead',
+                        'event_label': 'Consorcio Form',
+                        'value': 1
+                    });
+                }
+                
+                // Facebook Pixel
+                if (CONFIG.fbPixelId && typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Formulário Consórcio',
+                        content_category: 'Lead Generation'
+                    });
+                }
+                
+                // Google Tag Manager (se estiver configurado)
+                if (typeof dataLayer !== 'undefined') {
+                    dataLayer.push({
+                        'event': 'form_submit',
+                        'form_name': 'consorcio_lead',
+                        'lead_value': dados.valor || 'nao_informado'
+                    });
+                }
+                
+                // Mostrar mensagem de sucesso
+                alert(CONFIG.mensagens.sucesso);
+                
+                // Resetar formulário
+                this.reset();
+                
+                // Redirecionamento opcional
+                if (CONFIG.redirectUrl) {
+                    setTimeout(() => {
+                        window.location.href = CONFIG.redirectUrl;
+                    }, 2000);
+                }
+                
+            } catch (error) {
+                console.error('❌ Erro ao enviar lead:', error);
+                alert(CONFIG.mensagens.erro);
+                
+                // Tracking de erro
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'exception', {
+                        'description': 'Erro no envio do formulário',
+                        'fatal': false
+                    });
+                }
+                
+            } finally {
+                // Restaurar botão
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Máscara para telefone
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 7) {
+                value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+            }
+            e.target.value = value;
         });
     </script>
 </body>
